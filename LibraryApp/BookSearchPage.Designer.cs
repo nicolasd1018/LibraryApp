@@ -30,9 +30,9 @@
         {
             titleTextBox = new TextBox();
             isbnTextBox = new TextBox();
-            authorTextBox = new TextBox();
             genreTextBox = new TextBox();
             publisherTextBox = new TextBox();
+            authorTextBox = new TextBox();
             yearFromTextBox = new TextBox();
             yearToTextBox = new TextBox();
             titleLable = new Label();
@@ -62,26 +62,26 @@
             isbnTextBox.Size = new Size(125, 27);
             isbnTextBox.TabIndex = 1;
             // 
-            // authorTextBox
-            // 
-            authorTextBox.Location = new Point(145, 167);
-            authorTextBox.Name = "authorTextBox";
-            authorTextBox.Size = new Size(125, 27);
-            authorTextBox.TabIndex = 2;
-            // 
             // genreTextBox
             // 
-            genreTextBox.Location = new Point(350, 167);
+            genreTextBox.Location = new Point(145, 167);
             genreTextBox.Name = "genreTextBox";
             genreTextBox.Size = new Size(125, 27);
-            genreTextBox.TabIndex = 3;
+            genreTextBox.TabIndex = 2;
             // 
             // publisherTextBox
             // 
-            publisherTextBox.Location = new Point(589, 103);
+            publisherTextBox.Location = new Point(350, 167);
             publisherTextBox.Name = "publisherTextBox";
             publisherTextBox.Size = new Size(125, 27);
-            publisherTextBox.TabIndex = 4;
+            publisherTextBox.TabIndex = 3;
+            // 
+            // authorTextBox
+            // 
+            authorTextBox.Location = new Point(589, 103);
+            authorTextBox.Name = "authorTextBox";
+            authorTextBox.Size = new Size(125, 27);
+            authorTextBox.TabIndex = 4;
             // 
             // yearFromTextBox
             // 
@@ -173,6 +173,7 @@
             // searchedBooksBox
             // 
             searchedBooksBox.FormattingEnabled = true;
+            searchedBooksBox.HorizontalScrollbar = true;
             searchedBooksBox.Location = new Point(91, 260);
             searchedBooksBox.Name = "searchedBooksBox";
             searchedBooksBox.Size = new Size(623, 144);
@@ -186,6 +187,7 @@
             searchButton.TabIndex = 16;
             searchButton.Text = "Search";
             searchButton.UseVisualStyleBackColor = true;
+            searchButton.Click += searchButton_Click;
             // 
             // backButton
             // 
@@ -214,9 +216,9 @@
             Controls.Add(titleLable);
             Controls.Add(yearToTextBox);
             Controls.Add(yearFromTextBox);
+            Controls.Add(authorTextBox);
             Controls.Add(publisherTextBox);
             Controls.Add(genreTextBox);
-            Controls.Add(authorTextBox);
             Controls.Add(isbnTextBox);
             Controls.Add(titleTextBox);
             Name = "BookSearchPage";

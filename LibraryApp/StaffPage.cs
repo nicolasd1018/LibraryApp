@@ -27,10 +27,10 @@ namespace LibraryApp
 
         private void searchBooksButton_Click(object sender, EventArgs e)
         {
-            this.homePanel.Controls.Clear();
-            BookSearchPage bookSearchPage = new BookSearchPage(this.homePanel);
-            bookSearchPage.Dock = DockStyle.Fill;
-            this.homePanel.Controls.Add(bookSearchPage);
+            //this.homePanel.Controls.Clear();
+            //BookSearchPage bookSearchPage = new BookSearchPage(this.homePanel);
+            //bookSearchPage.Dock = DockStyle.Fill;
+            //this.homePanel.Controls.Add(bookSearchPage);    
         }
     }
 }

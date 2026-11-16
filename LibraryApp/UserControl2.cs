@@ -95,7 +95,7 @@ namespace LibraryApp
                     await client.ConnectAsync("smtp.gmail.com", 465, SecureSocketOptions.SslOnConnect);
 
                     // Use an App Password if 2FA is enabled
-                    await client.AuthenticateAsync("nicolasgabrieldiaz2001@gmail.com", "");
+                    await client.AuthenticateAsync("nicolasgabrieldiaz2001@gmail.com", "/* your app password */");
 
                     await client.SendAsync(message);
                     await client.DisconnectAsync(true);

@@ -52,7 +52,7 @@ namespace LibraryApp
         private void searchBooksButton_Click(object sender, EventArgs e)
         {
             this.homePanel.Controls.Clear();
-            BookSearchPage bookSearchPage = new BookSearchPage(this.homePanel);
+            BookSearchPage bookSearchPage = new BookSearchPage(this.homePanel, this.memberId);
             bookSearchPage.Dock = DockStyle.Fill;
             this.homePanel.Controls.Add(bookSearchPage);
         }
@@ -60,7 +60,7 @@ namespace LibraryApp
         private void manageDependentsButton_Click(object sender, EventArgs e)
         {
             this.homePanel.Controls.Clear();
-            manageDependentsPage manageDependentsPage = new manageDependentsPage(this.homePanel);
+            manageDependentsPage manageDependentsPage = new manageDependentsPage(this.homePanel, this.memberId);
             manageDependentsPage.Dock = DockStyle.Fill;
             this.homePanel.Controls.Add(manageDependentsPage);
         }

@@ -125,6 +125,7 @@
             addButton.TabIndex = 9;
             addButton.Text = "Add";
             addButton.UseVisualStyleBackColor = true;
+            addButton.Click += addDependentButton_Click;
             // 
             // listBox1
             // 
