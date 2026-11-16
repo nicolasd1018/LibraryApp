@@ -1,7 +1,12 @@
+using Microsoft.Data.SqlClient;
+using System.Diagnostics;
+
 namespace LibraryApp
 {
     public partial class HolderPage : Form
     {
+        
+
         public HolderPage()
         {
             InitializeComponent();

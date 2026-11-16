@@ -41,7 +41,7 @@
             // checkedOutBooksLabel
             // 
             checkedOutBooksLabel.AutoSize = true;
-            checkedOutBooksLabel.Location = new Point(48, 139);
+            checkedOutBooksLabel.Location = new Point(83, 139);
             checkedOutBooksLabel.Name = "checkedOutBooksLabel";
             checkedOutBooksLabel.Size = new Size(137, 20);
             checkedOutBooksLabel.TabIndex = 0;
@@ -52,15 +52,16 @@
             // 
             checkedoutBooksListBox.ForeColor = Color.Black;
             checkedoutBooksListBox.FormattingEnabled = true;
+            checkedoutBooksListBox.HorizontalScrollbar = true;
             checkedoutBooksListBox.Location = new Point(48, 178);
             checkedoutBooksListBox.Name = "checkedoutBooksListBox";
-            checkedoutBooksListBox.Size = new Size(137, 224);
+            checkedoutBooksListBox.Size = new Size(301, 224);
             checkedoutBooksListBox.TabIndex = 1;
             // 
             // finesLabel
             // 
             finesLabel.AutoSize = true;
-            finesLabel.Location = new Point(347, 139);
+            finesLabel.Location = new Point(438, 139);
             finesLabel.Name = "finesLabel";
             finesLabel.Size = new Size(42, 20);
             finesLabel.TabIndex = 2;
@@ -70,9 +71,10 @@
             // finesListBox
             // 
             finesListBox.FormattingEnabled = true;
-            finesListBox.Location = new Point(296, 178);
+            finesListBox.HorizontalScrollbar = true;
+            finesListBox.Location = new Point(382, 178);
             finesListBox.Name = "finesListBox";
-            finesListBox.Size = new Size(137, 224);
+            finesListBox.Size = new Size(168, 224);
             finesListBox.TabIndex = 3;
             // 
             // userHeader

@@ -1,6 +1,7 @@
 ﻿using MailKit;
 using MailKit.Net.Smtp;
 using MailKit.Security;
+using Microsoft.Data.SqlClient;
 using MimeKit;
 using System;
 using System;
@@ -21,11 +22,15 @@ namespace LibraryApp
     {
         private Panel homePanel;
         private bool isMemberLogin;
+        private string connectionString = @"Server=localhost;Database=Library System;Trusted_Connection=True;TrustServerCertificate=True;";
+        private List<(string Email, int MemberId)> usedEmails;
         public UserControl2(Panel homePanel, bool isMemberLogin)
         {
             InitializeComponent();
             this.homePanel = homePanel;
             this.isMemberLogin = isMemberLogin;
+            this.usedEmails = new List<(string Email, int MemberId)>();
+            this.loadUsedEmailsAndIDs();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -67,6 +72,11 @@ namespace LibraryApp
             }
             else
             {
+                if (!usedEmails.Exists(email => email.Email.Equals(userNameTextBox.Text.Trim(), StringComparison.OrdinalIgnoreCase)))
+                {
+                    MessageBox.Show("This email is not registered. Please create an account first.");
+                    return;
+                }
                 try
                 {
                     var message = new MimeMessage();
@@ -100,12 +110,45 @@ namespace LibraryApp
                 finally
                 {
                     this.homePanel.Controls.Clear();
-                    EmailCode emailCodePage = new EmailCode(this.homePanel, 0, verificationCode);
+                    EmailCode emailCodePage = new EmailCode(this.homePanel, usedEmails.Find(email => email.Email.Equals(userNameTextBox.Text.Trim(), StringComparison.OrdinalIgnoreCase)).MemberId, verificationCode);
                     emailCodePage.Dock = DockStyle.Fill;
                     this.homePanel.Controls.Add(emailCodePage);
                 }
             }
             
         }
+
+        private void loadUsedEmailsAndIDs()
+        {
+            string query = "SELECT Email, Member_id FROM dbo.MEMBER;";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (!reader.HasRows)
+                        {
+                            MessageBox.Show("Connected, but dbo.MEMBER has 0 rows.");
+                            return;
+                        }
+
+                        while (reader.Read())
+                        {
+                            usedEmails.Add((reader.GetString(0), reader.GetInt32(1)));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("SQL Error: " + ex.Message);
+            }
+        }
+
     }
 }

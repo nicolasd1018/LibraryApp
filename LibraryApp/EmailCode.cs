@@ -36,7 +36,7 @@ namespace LibraryApp
                 {
                     // Code is correct
                     this.homePanel.Controls.Clear();
-                    UserPage userPage = new UserPage(this.homePanel);
+                    UserPage userPage = new UserPage(this.homePanel, this.userId);
                     userPage.Dock = DockStyle.Fill;
                     this.homePanel.Controls.Add(userPage);
                 }
