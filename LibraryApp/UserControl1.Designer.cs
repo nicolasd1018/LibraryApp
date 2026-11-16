@@ -61,6 +61,7 @@
             StaffLoginButton.TabIndex = 2;
             StaffLoginButton.Text = "Staff";
             StaffLoginButton.UseVisualStyleBackColor = true;
+            StaffLoginButton.Click += StaffLoginButton_Click;
             // 
             // LoginPage
             // 

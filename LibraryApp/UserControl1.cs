@@ -20,9 +20,17 @@ namespace LibraryApp
         private void MemberLoginButton_Click(object sender, EventArgs e)
         {
             this.homePanel.Controls.Clear();
-            UserControl2 passwordPage = new UserControl2();
+            UserControl2 passwordPage = new UserControl2(homePanel, true);
             passwordPage.Dock = DockStyle.Fill;
             this.homePanel.Controls.Add(passwordPage);
+        }
+
+        private void StaffLoginButton_Click(object sender, EventArgs e)
+        {
+            this.homePanel.Controls.Clear();
+            StaffLoginPage staffLoginPage = new StaffLoginPage(this.homePanel);
+            staffLoginPage.Dock = DockStyle.Fill;
+            this.homePanel.Controls.Add(staffLoginPage);
         }
     }
 }

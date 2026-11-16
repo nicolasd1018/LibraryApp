@@ -29,73 +29,67 @@
         private void InitializeComponent()
         {
             userNameTextBox = new TextBox();
-            passwordTextBox = new TextBox();
             usernameLabel = new Label();
-            passwordLabel = new Label();
             backButton = new Button();
             LoginButton = new Button();
+            createNewAccountButton = new Button();
             SuspendLayout();
             // 
             // userNameTextBox
             // 
-            userNameTextBox.Location = new Point(385, 145);
+            userNameTextBox.Location = new Point(217, 153);
             userNameTextBox.Name = "userNameTextBox";
-            userNameTextBox.Size = new Size(125, 27);
+            userNameTextBox.Size = new Size(348, 27);
             userNameTextBox.TabIndex = 0;
-            // 
-            // passwordTextBox
-            // 
-            passwordTextBox.Location = new Point(385, 198);
-            passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(125, 27);
-            passwordTextBox.TabIndex = 1;
             // 
             // usernameLabel
             // 
             usernameLabel.AutoSize = true;
-            usernameLabel.Location = new Point(280, 152);
+            usernameLabel.Location = new Point(165, 160);
             usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new Size(75, 20);
+            usernameLabel.Size = new Size(46, 20);
             usernameLabel.TabIndex = 2;
-            usernameLabel.Text = "Username";
+            usernameLabel.Text = "Email";
             usernameLabel.Click += label1_Click;
-            // 
-            // passwordLabel
-            // 
-            passwordLabel.AutoSize = true;
-            passwordLabel.Location = new Point(280, 205);
-            passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new Size(70, 20);
-            passwordLabel.TabIndex = 3;
-            passwordLabel.Text = "Password";
             // 
             // backButton
             // 
-            backButton.Location = new Point(280, 253);
+            backButton.Location = new Point(280, 198);
             backButton.Name = "backButton";
             backButton.Size = new Size(94, 29);
             backButton.TabIndex = 4;
             backButton.Text = "Back";
             backButton.UseVisualStyleBackColor = true;
+            backButton.Click += backButton_Click;
             // 
             // LoginButton
             // 
-            LoginButton.Location = new Point(416, 253);
+            LoginButton.Location = new Point(416, 198);
             LoginButton.Name = "LoginButton";
             LoginButton.Size = new Size(94, 29);
             LoginButton.TabIndex = 5;
-            LoginButton.Text = "Login";
+            LoginButton.Text = "Send Code";
             LoginButton.UseVisualStyleBackColor = true;
+            LoginButton.Click += LoginButton_Click;
+            // 
+            // createNewAccountButton
+            // 
+            createNewAccountButton.Location = new Point(319, 248);
+            createNewAccountButton.Name = "createNewAccountButton";
+            createNewAccountButton.Size = new Size(160, 29);
+            createNewAccountButton.TabIndex = 6;
+            createNewAccountButton.Text = "Create New Account";
+            createNewAccountButton.UseVisualStyleBackColor = true;
+            createNewAccountButton.Click += button1_Click;
             // 
             // UserControl2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(createNewAccountButton);
             Controls.Add(LoginButton);
             Controls.Add(backButton);
-            Controls.Add(passwordLabel);
             Controls.Add(usernameLabel);
-            Controls.Add(passwordTextBox);
             Controls.Add(userNameTextBox);
             Name = "UserControl2";
             Size = new Size(818, 525);
@@ -112,10 +106,9 @@
         #endregion
 
         private TextBox userNameTextBox;
-        private TextBox passwordTextBox;
         private Label usernameLabel;
-        private Label passwordLabel;
         private Button backButton;
         private Button LoginButton;
+        private Button createNewAccountButton;
     }
 }
