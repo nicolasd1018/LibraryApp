@@ -86,7 +86,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Select Gender", "Male", "Female", "Other", "Prefer Not To Say" });
+            comboBox1.Items.AddRange(new object[] { "M", "F", "X" });
             comboBox1.Location = new Point(588, 102);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(151, 28);

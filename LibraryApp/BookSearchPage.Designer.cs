@@ -46,53 +46,56 @@
             searchedBooksBox = new ListBox();
             searchButton = new Button();
             backButton = new Button();
+            addBookButton = new Button();
+            editBookButton = new Button();
+            deleteBookButton = new Button();
             SuspendLayout();
             // 
             // titleTextBox
             // 
-            titleTextBox.Location = new Point(145, 103);
+            titleTextBox.Location = new Point(149, 80);
             titleTextBox.Name = "titleTextBox";
             titleTextBox.Size = new Size(125, 27);
             titleTextBox.TabIndex = 0;
             // 
             // isbnTextBox
             // 
-            isbnTextBox.Location = new Point(350, 103);
+            isbnTextBox.Location = new Point(354, 80);
             isbnTextBox.Name = "isbnTextBox";
             isbnTextBox.Size = new Size(125, 27);
             isbnTextBox.TabIndex = 1;
             // 
             // genreTextBox
             // 
-            genreTextBox.Location = new Point(145, 167);
+            genreTextBox.Location = new Point(149, 144);
             genreTextBox.Name = "genreTextBox";
             genreTextBox.Size = new Size(125, 27);
             genreTextBox.TabIndex = 2;
             // 
             // publisherTextBox
             // 
-            publisherTextBox.Location = new Point(350, 167);
+            publisherTextBox.Location = new Point(354, 144);
             publisherTextBox.Name = "publisherTextBox";
             publisherTextBox.Size = new Size(125, 27);
             publisherTextBox.TabIndex = 3;
             // 
             // authorTextBox
             // 
-            authorTextBox.Location = new Point(589, 103);
+            authorTextBox.Location = new Point(593, 80);
             authorTextBox.Name = "authorTextBox";
             authorTextBox.Size = new Size(125, 27);
             authorTextBox.TabIndex = 4;
             // 
             // yearFromTextBox
             // 
-            yearFromTextBox.Location = new Point(611, 168);
+            yearFromTextBox.Location = new Point(615, 145);
             yearFromTextBox.Name = "yearFromTextBox";
             yearFromTextBox.Size = new Size(38, 27);
             yearFromTextBox.TabIndex = 5;
             // 
             // yearToTextBox
             // 
-            yearToTextBox.Location = new Point(676, 167);
+            yearToTextBox.Location = new Point(680, 144);
             yearToTextBox.Name = "yearToTextBox";
             yearToTextBox.Size = new Size(38, 27);
             yearToTextBox.TabIndex = 6;
@@ -100,7 +103,7 @@
             // titleLable
             // 
             titleLable.AutoSize = true;
-            titleLable.Location = new Point(91, 106);
+            titleLable.Location = new Point(95, 83);
             titleLable.Name = "titleLable";
             titleLable.Size = new Size(38, 20);
             titleLable.TabIndex = 7;
@@ -109,7 +112,7 @@
             // isbnLabel
             // 
             isbnLabel.AutoSize = true;
-            isbnLabel.Location = new Point(303, 110);
+            isbnLabel.Location = new Point(307, 87);
             isbnLabel.Name = "isbnLabel";
             isbnLabel.Size = new Size(41, 20);
             isbnLabel.TabIndex = 8;
@@ -118,7 +121,7 @@
             // authorLabel
             // 
             authorLabel.AutoSize = true;
-            authorLabel.Location = new Point(533, 106);
+            authorLabel.Location = new Point(537, 83);
             authorLabel.Name = "authorLabel";
             authorLabel.Size = new Size(54, 20);
             authorLabel.TabIndex = 9;
@@ -127,7 +130,7 @@
             // genreLabel
             // 
             genreLabel.AutoSize = true;
-            genreLabel.Location = new Point(91, 174);
+            genreLabel.Location = new Point(95, 151);
             genreLabel.Name = "genreLabel";
             genreLabel.Size = new Size(48, 20);
             genreLabel.TabIndex = 10;
@@ -136,7 +139,7 @@
             // publisherLabel
             // 
             publisherLabel.AutoSize = true;
-            publisherLabel.Location = new Point(275, 174);
+            publisherLabel.Location = new Point(279, 151);
             publisherLabel.Name = "publisherLabel";
             publisherLabel.Size = new Size(69, 20);
             publisherLabel.TabIndex = 11;
@@ -145,7 +148,7 @@
             // yearPublishedLabel
             // 
             yearPublishedLabel.AutoSize = true;
-            yearPublishedLabel.Location = new Point(491, 170);
+            yearPublishedLabel.Location = new Point(495, 147);
             yearPublishedLabel.Name = "yearPublishedLabel";
             yearPublishedLabel.Size = new Size(105, 20);
             yearPublishedLabel.TabIndex = 12;
@@ -154,7 +157,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(655, 174);
+            label1.Location = new Point(659, 151);
             label1.Name = "label1";
             label1.Size = new Size(15, 20);
             label1.TabIndex = 13;
@@ -174,14 +177,14 @@
             // 
             searchedBooksBox.FormattingEnabled = true;
             searchedBooksBox.HorizontalScrollbar = true;
-            searchedBooksBox.Location = new Point(91, 260);
+            searchedBooksBox.Location = new Point(109, 211);
             searchedBooksBox.Name = "searchedBooksBox";
             searchedBooksBox.Size = new Size(623, 144);
             searchedBooksBox.TabIndex = 15;
             // 
             // searchButton
             // 
-            searchButton.Location = new Point(362, 214);
+            searchButton.Location = new Point(366, 177);
             searchButton.Name = "searchButton";
             searchButton.Size = new Size(94, 28);
             searchButton.TabIndex = 16;
@@ -199,10 +202,43 @@
             backButton.UseVisualStyleBackColor = true;
             backButton.Click += backButton_Click;
             // 
+            // addBookButton
+            // 
+            addBookButton.Location = new Point(168, 371);
+            addBookButton.Name = "addBookButton";
+            addBookButton.Size = new Size(94, 29);
+            addBookButton.TabIndex = 18;
+            addBookButton.Text = "Add Book";
+            addBookButton.UseVisualStyleBackColor = true;
+            addBookButton.Click += addBookButton_Click;
+            // 
+            // editBookButton
+            // 
+            editBookButton.Location = new Point(366, 371);
+            editBookButton.Name = "editBookButton";
+            editBookButton.Size = new Size(94, 29);
+            editBookButton.TabIndex = 19;
+            editBookButton.Text = "Edit Book";
+            editBookButton.UseVisualStyleBackColor = true;
+            editBookButton.Click += editBookButton_Click;
+            // 
+            // deleteBookButton
+            // 
+            deleteBookButton.Location = new Point(593, 371);
+            deleteBookButton.Name = "deleteBookButton";
+            deleteBookButton.Size = new Size(94, 29);
+            deleteBookButton.TabIndex = 20;
+            deleteBookButton.Text = "Delete Book";
+            deleteBookButton.UseVisualStyleBackColor = true;
+            deleteBookButton.Click += deleteBookButton_Click;
+            // 
             // BookSearchPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(deleteBookButton);
+            Controls.Add(editBookButton);
+            Controls.Add(addBookButton);
             Controls.Add(backButton);
             Controls.Add(searchButton);
             Controls.Add(searchedBooksBox);
@@ -247,5 +283,8 @@
         private ListBox searchedBooksBox;
         private Button searchButton;
         private Button backButton;
+        private Button addBookButton;
+        private Button editBookButton;
+        private Button deleteBookButton;
     }
 }

@@ -83,5 +83,42 @@ namespace LibraryApp
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
         }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            
+            string query = "DELETE FROM dbo.DEPENDENT WHERE Member_id=@Member_id AND Name=@Name";
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(this.connectionString))
+                    {
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@Member_id", memberId);
+                            cmd.Parameters.AddWithValue("@Name", listBox1.SelectedItem.ToString().Split("-")[0].Trim());
+
+                            int rowsAffected = cmd.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                listBox1.Items.Remove(listBox1.SelectedItem.ToString());
+                                MessageBox.Show("Record deleted successfully.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("No matching record was found.");
+                            }
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    // Note: Error 547 occurs if another table (like BORROWS) still references this record
+                    MessageBox.Show("Delete failed: " + ex.Message);
+                }
+
+            
+        }
     }
 }
